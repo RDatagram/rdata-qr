@@ -1,4 +1,4 @@
-<transactionbodycustomfield scriptid="custbody_invoice_qr_code">
+<transactionbodycustomfield scriptid="custbody_rdata_invoice_qr_code">
   <accesslevel>2</accesslevel>
   <applyformatting>F</applyformatting>
   <bodycustomerpayment>F</bodycustomerpayment>
@@ -6,22 +6,17 @@
   <bodydeposit>F</bodydeposit>
   <bodydepositapplication>F</bodydepositapplication>
   <bodyexpensereport>F</bodyexpensereport>
-  <bodyinventoryadjustment>F</bodyinventoryadjustment>
   <bodyitemfulfillment>F</bodyitemfulfillment>
   <bodyitemfulfillmentorder>F</bodyitemfulfillmentorder>
-  <bodyitemreceipt>F</bodyitemreceipt>
-  <bodyitemreceiptorder>F</bodyitemreceiptorder>
   <bodyjournal>F</bodyjournal>
-  <bodyopportunity>F</bodyopportunity>
   <bodyothertransaction>F</bodyothertransaction>
+  <bodyperiodendjournal>F</bodyperiodendjournal>
   <bodypickingticket>F</bodypickingticket>
   <bodyprintflag>F</bodyprintflag>
   <bodyprintpackingslip>F</bodyprintpackingslip>
   <bodyprintstatement>F</bodyprintstatement>
   <bodypurchase>F</bodypurchase>
   <bodysale>T</bodysale>
-  <bodystore>F</bodystore>
-  <bodytransferorder>F</bodytransferorder>
   <bodyvendorpayment>F</bodyvendorpayment>
   <bodyvendorprepayment>F</bodyvendorprepayment>
   <checkspelling>F</checkspelling>
@@ -41,7 +36,7 @@
   <isformula>F</isformula>
   <ismandatory>F</ismandatory>
   <isparent>F</isparent>
-  <label>QR Code</label>
+  <label>QR Code (2)</label>
   <linktext></linktext>
   <maxlength></maxlength>
   <maxvalue></maxvalue>

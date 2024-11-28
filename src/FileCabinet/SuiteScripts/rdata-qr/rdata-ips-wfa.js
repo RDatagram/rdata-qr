@@ -21,26 +21,12 @@ define(['N/file','./rdata-nbs-lib'],
         const onAction = (scriptContext) => {
 
             const invoice = scriptContext.newRecord;
-
-            const amount = scriptContext.newRecord.getValue('total');
-
-            let payload = {
-                "K": "PR",
-                "V": "01",
-                "C": "1",
-                "R": "845000000040484987",
-                "N": "JP EPS BEOGRAD\r\nBALKANSKA 13",
-                "I": "RSD"+ amount.toLocaleString('sr-SR').replace('.',''),
-                "SF": "189",
-                "S": "UPLATA PO RAČUNU"
+            let configOptions = {
+                name : "NBS"
             }
+            const configQr = rdata_nbs_lib.getConfig(configOptions);
 
-            log.debug({
-                title: 'Invoice Payload',
-                details: payload
-            });
-
-            let pngFile = rdata_nbs_lib.generateQR(payload);
+            let pngFile = rdata_nbs_lib.generateQR(invoice,configQr);
 
             log.debug({
                 title: 'Generate QR Code',
@@ -48,17 +34,17 @@ define(['N/file','./rdata-nbs-lib'],
             });
 
             let myFile = fileModule.create({
-                name: 'response.png',
+                name: invoice.getValue('tranid')+'_qr.png',
                 fileType: fileModule.Type.PNGIMAGE,
                 contents: pngFile,
                 encoding: fileModule.Encoding.BASE64,
-                folder: 425 // replace with your folder path or ID
+                folder: configQr.folder
             });
 
             const idQRCode = myFile.save();
 
             invoice.setValue({
-                fieldId: 'custbody_invoice_qr_code',
+                fieldId: 'custbody_rdata_invoice_qr_code',
                 value: idQRCode
             })
         }
